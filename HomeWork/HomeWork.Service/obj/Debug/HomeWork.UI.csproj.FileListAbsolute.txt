@@ -1,0 +1,7 @@
+D:\Обучение C#\Второй курс\Delegates\HomeWork\HomeWork.Service\bin\Debug\HomeWork.UI.exe
+D:\Обучение C#\Второй курс\Delegates\HomeWork\HomeWork.Service\bin\Debug\HomeWork.UI.pdb
+D:\Обучение C#\Второй курс\Delegates\HomeWork\HomeWork.Service\bin\Debug\HomeWork.Data.exe
+D:\Обучение C#\Второй курс\Delegates\HomeWork\HomeWork.Service\bin\Debug\HomeWork.Data.pdb
+D:\Обучение C#\Второй курс\Delegates\HomeWork\HomeWork.Service\obj\Debug\HomeWork.UI.csprojResolveAssemblyReference.cache
+D:\Обучение C#\Второй курс\Delegates\HomeWork\HomeWork.Service\obj\Debug\HomeWork.UI.exe
+D:\Обучение C#\Второй курс\Delegates\HomeWork\HomeWork.Service\obj\Debug\HomeWork.UI.pdb
