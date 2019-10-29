@@ -1,32 +1,28 @@
 ﻿using System;
+using System.Linq;
 
 namespace Calculator
 {
     class Program
     {
+        delegate int Calculate(int x, int y);
+
         static void Main(string[] args)
         {
-            var num = new[] { 1, 2, 3, 4 };
+            var num = new[] {1, 2, 3, 4};
 
-            var calc = new Calculator(Operation.Add);
+            Calculate calc = (x, y) => x + y;
             Console.WriteLine(GetValue(num, calc));
 
-            var multiply = new Calculator(Operation.Multiply);
-            Console.WriteLine(GetValue(num, multiply));
+            calc += (x, y) => x * y;
+            Console.WriteLine(GetValue(num, calc));
 
             Console.ReadKey();
         }
 
-        private static int GetValue(int[] num, Calculator calc)
+        private static int GetValue(int[] num, Calculate calc)
         {
-            int result = 0;
-
-            foreach (var n in num)
-            {
-                result += calc.Calculate(n, 1);
-            }
-
-            return result;
+            return num.Sum(n => calc(n, 1));
         }
     }
 }
