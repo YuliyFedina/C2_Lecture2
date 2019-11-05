@@ -1,4 +1,7 @@
-﻿namespace Event_logging_1
+﻿using System;
+using System.Runtime.Remoting.Channels;
+
+namespace Event_logging_1
 {
     public enum OrderType
     {
@@ -11,8 +14,7 @@
 
     public class Order
     {
-        public delegate void OrderHandler(OrderEventArgs orderEventArgs);
-        public event OrderHandler Notify;
+        public event EventHandler<OrderEventArgs> Notified = delegate {  };
 
         public ulong Id { get; set; }
         public string JuridicalPerson { get; set; }
@@ -28,7 +30,7 @@
         public void AddPosition(OrderType type)
         {
             Cost += OrderTypeCostMapper.GetCost[type];
-            Notify?.Invoke(new OrderEventArgs($"Добавлена позиция по типу заказа: {type}, на сумму {OrderTypeCostMapper.GetCost[type]} руб. Сумма на счету {JuridicalPerson} - {Cost} руб.", Id, JuridicalPerson));
+            Notified(this, new OrderEventArgs($"Добавлена позиция по типу заказа: {type}. Сумма на счету {JuridicalPerson} - {Cost} руб.", Id, JuridicalPerson));
         }
     }
 }

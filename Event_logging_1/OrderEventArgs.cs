@@ -1,6 +1,8 @@
-﻿namespace Event_logging_1
+﻿using System;
+
+namespace Event_logging_1
 {
-    public class OrderEventArgs
+    public class OrderEventArgs : EventArgs
     {
         public string Message { get; }
         public ulong Id { get; }
