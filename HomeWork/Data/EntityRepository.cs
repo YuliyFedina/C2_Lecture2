@@ -6,6 +6,7 @@ namespace HomeWork.Data.Data
 {
     public class EntityRepository<TEntity> : IRepository<TEntity> where TEntity : IEntity
     {
+        public delegate TEntity FilterRepository(long id);
         private readonly List<TEntity> _storage = new List<TEntity>();
 
         public void Add(TEntity contact)
