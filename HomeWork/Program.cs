@@ -18,6 +18,7 @@ namespace HomeWork.Data
             contactRepository.Add(phone);
 
             Console.WriteLine(contactRepository.GetById(1));
+            Console.ReadLine();
         }
 
         private static IRepository<TEntity> GetRepository<TEntity>() where TEntity : IEntity
